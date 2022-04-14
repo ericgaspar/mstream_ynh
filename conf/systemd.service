@@ -1,16 +1,16 @@
 [Unit]
-Description=Small description of the service
+Description=Music Mstream Server
 After=network.target
 
 [Service]
 Type=simple
 User=__APP__
 Group=__APP__
+Environment=NODE_PORT=__PORT__
 WorkingDirectory=__FINALPATH__/
 Environment="PATH=__ENV_PATH__"
-ExecStart=start cli-boot-wrapper.js --name mStream
-StandardOutput=append:/var/log/__APP__/__APP__.log
-StandardError=inherit
+ExecStart=__YNH_NODE__ __FINALPATH__/cli-boot-wrapper.js
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
