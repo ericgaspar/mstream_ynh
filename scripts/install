@@ -121,10 +121,10 @@ chown -R $app:www-data "$datadir"
 #=================================================
 ynh_script_progression --message="Adding a configuration file..." --time --weight=1
 
-ynh_add_config --template="../conf/default.conf" --destination="$final_path/save/conf/default.conf"
+ynh_add_config --template="../conf/default.conf" --destination="$final_path/save/conf/default.json"
 
-chmod 400 "$final_path/save/conf/default.conf"
-chown $app:$app "$final_path/save/conf/default.conf"
+chmod 400 "$final_path/save/conf/default.json"
+chown $app:$app "$final_path/save/conf/default.json"
 
 #=================================================
 # INSTALLING MSTREAM
